@@ -1,0 +1,5 @@
+<div class="profile-links">
+  <a href="mailto:{{ site.data.publications.identity.email | escape }}">Email</a>
+  {% for link in site.data.publications.identity.links %}{% unless link.label == 'Google Scholar' %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% endunless %}{% endfor %}
+  {% if site.public_cv %}<a href="{{ '/assets/pdf/Justin_Do_CV.pdf' | relative_url }}">CV (PDF)</a>{% endif %}
+</div>

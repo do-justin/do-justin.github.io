@@ -1,0 +1,2 @@
+{% assign metrics = site.data.publications.identity.metrics %}
+{% if metrics %}<div class="scholar-metrics"><a class="scholar-button" href="{{ metrics.source_url | escape }}">{{ metrics.source | escape }}</a><span><strong>{{ metrics.citations }}</strong> citations · h-index <strong>{{ metrics.h_index }}</strong> · i10-index <strong>{{ metrics.i10_index }}</strong></span><time datetime="{{ metrics.as_of }}">{{ metrics.as_of | date: '%b %-d, %Y' }}</time></div>{% endif %}

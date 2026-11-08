@@ -1,0 +1,1169 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "name": "Justin Do",
+    "role": "Fourth-year medical student, MD expected 2027",
+    "affiliation": "Sidney Kimmel Medical College, Thomas Jefferson University",
+    "email": "justin.do@students.jefferson.edu",
+    "author_aliases": [
+      "Do J",
+      "Justin Do"
+    ],
+    "links": [
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=8dmfJnkAAAAJ&hl=en"
+      },
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0009-0005-4480-7636"
+      }
+    ],
+    "metrics": {
+      "source": "Google Scholar",
+      "source_url": "https://scholar.google.com/citations?user=8dmfJnkAAAAJ&hl=en",
+      "as_of": "2026-11-07",
+      "citations": 48,
+      "h_index": 4,
+      "i10_index": 3
+    }
+  },
+  "works": [
+    {
+      "id": "aki-jamia-2026",
+      "kind": "article",
+      "status": "published",
+      "title": "Integration of intraoperative data in interpretable machine learning models to predict postoperative AKI in noncardiac surgery patients",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Shah KH",
+          "bibtex": "Shah, K. H."
+        },
+        {
+          "display": "Xu MC",
+          "bibtex": "Xu, M. C."
+        },
+        {
+          "display": "Kim AH",
+          "bibtex": "Kim, A. H."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Li M",
+          "bibtex": "Li, M."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "JAMIA Open",
+      "date": "2026-06-20",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1093/jamiaopen/ooag092"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42327625/"
+        }
+      ],
+      "related_ids": [
+        "aki-anesthesiology-2025"
+      ],
+      "sources": [
+        "https://doi.org/10.1093/jamiaopen/ooag092"
+      ],
+      "volume": "9",
+      "issue": "3",
+      "pages": "ooag092",
+      "pmid": "42327625",
+      "doi": "10.1093/jamiaopen/ooag092",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "online_date": "2026-06-20",
+      "summary": {
+        "kind": "Summary",
+        "text": "This retrospective INSPIRE study compared preoperative models with models incorporating low-frequency intraoperative data for stage 2 or 3 postoperative acute kidney injury. Intraoperative summaries added limited discrimination, and a temporal deep-learning model did not outperform simpler tabular methods. The findings motivate testing whether higher-resolution physiologic signals add information beyond the preoperative record.",
+        "source": "https://doi.org/10.1093/jamiaopen/ooag092",
+        "reuse_basis": "Original summary written for this website from the cited public research record."
+      },
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "fall-risk-jmir-2026",
+      "kind": "article",
+      "status": "published",
+      "title": "Leveraging multimodal large language models for fall risk reduction in older adults in the home: proposed model design",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Zhang L",
+          "bibtex": "Zhang, L."
+        },
+        {
+          "display": "Chavre BM",
+          "bibtex": "Chavre, B. M."
+        },
+        {
+          "display": "Cha J",
+          "bibtex": "Cha, J."
+        },
+        {
+          "display": "Pugliese R",
+          "bibtex": "Pugliese, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "JMIR Aging",
+      "date": "2026-05-13",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.2196/77591"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42127229/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.2196/77591"
+      ],
+      "volume": "9",
+      "pages": "e77591",
+      "pmid": "42127229",
+      "doi": "10.2196/77591",
+      "doi_scope": "work",
+      "subtype": "Research letter",
+      "online_date": "2026-05-13",
+      "summary": {
+        "kind": "Summary",
+        "text": "This research letter develops and evaluates a multimodal workflow for identifying home fall hazards and visualizing suggested modifications. A formative rating study compared baseline outputs with an enhanced, evidence-grounded pipeline. The findings support further design evaluation while preserving concerns about implausible or hazardous edits; clinical implementation and effects on falls remain untested.",
+        "source": "https://doi.org/10.2196/77591",
+        "reuse_basis": "Original summary written for this website from the cited public research record."
+      },
+      "citations": {
+        "source": "Crossref",
+        "count": 1,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "taaa-follow-up-2026",
+      "kind": "article",
+      "status": "published",
+      "title": "Management modality of thoracoabdominal aortic aneurysms is associated with lower rates of follow-up",
+      "authors": [
+        {
+          "display": "Xu MC",
+          "bibtex": "Xu, M. C."
+        },
+        {
+          "display": "Schwartz D",
+          "bibtex": "Schwartz, D."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Abai B",
+          "bibtex": "Abai, B."
+        },
+        {
+          "display": "Salvatore D",
+          "bibtex": "Salvatore, D."
+        },
+        {
+          "display": "DiMuzio P",
+          "bibtex": "DiMuzio, P."
+        },
+        {
+          "display": "Nooromid M",
+          "bibtex": "Nooromid, M."
+        }
+      ],
+      "owner_author_index": 2,
+      "venue": "American Journal of Medical Quality",
+      "date": "2026-07",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1097/JMQ.0000000000000307"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42358180/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1097/JMQ.0000000000000307"
+      ],
+      "volume": "41",
+      "issue": "4",
+      "pages": "221-222",
+      "pmid": "42358180",
+      "doi": "10.1097/JMQ.0000000000000307",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "online_date": "2026-06-30",
+      "issue_date": "2026-07",
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "vascular-readability-2026",
+      "kind": "article",
+      "status": "published",
+      "title": "Large language models improve readability of patient education materials on vascular conditions",
+      "authors": [
+        {
+          "display": "Xu MC",
+          "bibtex": "Xu, M. C."
+        },
+        {
+          "display": "Habash N",
+          "bibtex": "Habash, N."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Bi J",
+          "bibtex": "Bi, J."
+        },
+        {
+          "display": "Salvatore D",
+          "bibtex": "Salvatore, D."
+        },
+        {
+          "display": "DiMuzio P",
+          "bibtex": "DiMuzio, P."
+        },
+        {
+          "display": "Nooromid M",
+          "bibtex": "Nooromid, M."
+        },
+        {
+          "display": "Abai B",
+          "bibtex": "Abai, B."
+        }
+      ],
+      "owner_author_index": 2,
+      "venue": "JVS-Vascular Insights",
+      "date": "2026",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.jvsvi.2025.100318"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1016/j.jvsvi.2025.100318"
+      ],
+      "volume": "4",
+      "pages": "100318",
+      "doi": "10.1016/j.jvsvi.2025.100318",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "citations": {
+        "source": "Crossref",
+        "count": 2,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "cerebral-atherosclerosis-2025",
+      "kind": "article",
+      "status": "published",
+      "title": "Understanding disparities in cerebral atherosclerosis mortality across the United States: an analysis of the CDC WONDER database",
+      "authors": [
+        {
+          "display": "Fuleihan AA",
+          "bibtex": "Fuleihan, A. A."
+        },
+        {
+          "display": "Roy JM",
+          "bibtex": "Roy, J. M."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Musmar B",
+          "bibtex": "Musmar, B."
+        },
+        {
+          "display": "Massman L",
+          "bibtex": "Massman, L."
+        },
+        {
+          "display": "Atallah E",
+          "bibtex": "Atallah, E."
+        },
+        {
+          "display": "Tjoumakaris SI",
+          "bibtex": "Tjoumakaris, S. I."
+        },
+        {
+          "display": "Gooch MR",
+          "bibtex": "Gooch, M. R."
+        },
+        {
+          "display": "Rosenwasser RH",
+          "bibtex": "Rosenwasser, R. H."
+        },
+        {
+          "display": "Jabbour P",
+          "bibtex": "Jabbour, P."
+        }
+      ],
+      "owner_author_index": 2,
+      "venue": "Journal of Clinical Neuroscience",
+      "date": "2025-10",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.jocn.2025.111532"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40753666/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1016/j.jocn.2025.111532"
+      ],
+      "volume": "140",
+      "pages": "111532",
+      "pmid": "40753666",
+      "doi": "10.1016/j.jocn.2025.111532",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "citations": {
+        "source": "Crossref",
+        "count": 1,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "graphic-medicine-2025",
+      "kind": "article",
+      "status": "published",
+      "title": "Drawing it out: a descriptive study on how medical students use graphic medicine to depict their transition to third year",
+      "authors": [
+        {
+          "display": "Fishman C",
+          "bibtex": "Fishman, C."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Markham F",
+          "bibtex": "Markham, F."
+        }
+      ],
+      "owner_author_index": 1,
+      "venue": "Medical Science Educator",
+      "date": "2025-08",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1007/s40670-025-02377-w"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41112889/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1007/s40670-025-02377-w"
+      ],
+      "volume": "35",
+      "issue": "4",
+      "pages": "1855-1859",
+      "pmid": "41112889",
+      "doi": "10.1007/s40670-025-02377-w",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "online_date": "2025-04-07",
+      "issue_date": "2025-08",
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "portal-ai-2025",
+      "kind": "article",
+      "status": "published",
+      "title": "Patient perceptions of electronic patient portal artificial intelligence use at an urban medical center",
+      "authors": [
+        {
+          "display": "Hazlewood C",
+          "bibtex": "Hazlewood, C."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Logan JA",
+          "bibtex": "Logan, J. A."
+        },
+        {
+          "display": "Kantor J",
+          "bibtex": "Kantor, J."
+        },
+        {
+          "display": "Leaphart K",
+          "bibtex": "Leaphart, K."
+        },
+        {
+          "display": "Simone NL",
+          "bibtex": "Simone, N. L."
+        },
+        {
+          "display": "Dicker AP",
+          "bibtex": "Dicker, A. P."
+        }
+      ],
+      "owner_author_index": 1,
+      "venue": "AI in Precision Oncology",
+      "date": "2025-08",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1177/2993091X251364897"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1177/2993091X251364897",
+        "https://journals.sagepub.com/doi/10.1177/2993091X251364897"
+      ],
+      "volume": "2",
+      "issue": "4",
+      "pages": "142-148",
+      "doi": "10.1177/2993091X251364897",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "online_date": "2025-08-06",
+      "issue_date": "2025-08",
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "views-aging-review-2025",
+      "kind": "article",
+      "status": "published",
+      "title": "Views of aging and subjective cognition in middle-aged and older adults: a systematic review",
+      "authors": [
+        {
+          "display": "Hill NL",
+          "bibtex": "Hill, N. L."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Bratlee-Whitaker E",
+          "bibtex": "Bratlee-Whitaker, E."
+        },
+        {
+          "display": "Turner JR",
+          "bibtex": "Turner, J. R."
+        },
+        {
+          "display": "Sillner A",
+          "bibtex": "Sillner, A."
+        },
+        {
+          "display": "Fishman C",
+          "bibtex": "Fishman, C."
+        },
+        {
+          "display": "Mogle J",
+          "bibtex": "Mogle, J."
+        }
+      ],
+      "owner_author_index": 1,
+      "venue": "Gerontology",
+      "date": "2025",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1159/000542507"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39586249/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1159/000542507"
+      ],
+      "volume": "71",
+      "issue": "1",
+      "pages": "49-70",
+      "pmid": "39586249",
+      "doi": "10.1159/000542507",
+      "doi_scope": "work",
+      "subtype": "Systematic review",
+      "online_date": "2024-11-25",
+      "issue_date": "2025",
+      "citations": {
+        "source": "Crossref",
+        "count": 5,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "aging-expectations-2025",
+      "kind": "article",
+      "status": "published",
+      "title": "Just as expected? Older adults' aging expectations are associated with subjective cognition",
+      "authors": [
+        {
+          "display": "Hill NL",
+          "bibtex": "Hill, N. L."
+        },
+        {
+          "display": "Bhargava S",
+          "bibtex": "Bhargava, S."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Bratlee-Whitaker E",
+          "bibtex": "Bratlee-Whitaker, E."
+        },
+        {
+          "display": "Brown MJ",
+          "bibtex": "Brown, M. J."
+        },
+        {
+          "display": "Komalasari R",
+          "bibtex": "Komalasari, R."
+        },
+        {
+          "display": "Wu R",
+          "bibtex": "Wu, R."
+        },
+        {
+          "display": "Mogle J",
+          "bibtex": "Mogle, J."
+        }
+      ],
+      "owner_author_index": 2,
+      "venue": "Aging & Mental Health",
+      "date": "2025-03",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1080/13607863.2024.2399080"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39241125/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1080/13607863.2024.2399080"
+      ],
+      "volume": "29",
+      "issue": "3",
+      "pages": "444-451",
+      "pmid": "39241125",
+      "doi": "10.1080/13607863.2024.2399080",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "online_date": "2024-09-06",
+      "issue_date": "2025-03",
+      "citations": {
+        "source": "Crossref",
+        "count": 3,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "dementia-risk-editorial-2023",
+      "kind": "article",
+      "status": "published",
+      "title": "Reducing dementia risk: the latest evidence to guide conversations with older adults",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Hill NL",
+          "bibtex": "Hill, N. L."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "Journal of Gerontological Nursing",
+      "date": "2023-09",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.3928/00989134-20230815-01"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37650850/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.3928/00989134-20230815-01"
+      ],
+      "volume": "49",
+      "issue": "9",
+      "pages": "3-5",
+      "pmid": "37650850",
+      "doi": "10.3928/00989134-20230815-01",
+      "doi_scope": "work",
+      "subtype": "Guest editorial",
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "cognition-communication-bmc-2023",
+      "kind": "article",
+      "status": "published",
+      "title": "Patient-provider communication about cognition and the role of memory concerns: a descriptive study",
+      "authors": [
+        {
+          "display": "Hill NL",
+          "bibtex": "Hill, N. L."
+        },
+        {
+          "display": "Bratlee-Whitaker E",
+          "bibtex": "Bratlee-Whitaker, E."
+        },
+        {
+          "display": "Jang H",
+          "bibtex": "Jang, H."
+        },
+        {
+          "display": "Bhargava S",
+          "bibtex": "Bhargava, S."
+        },
+        {
+          "display": "Sillner AY",
+          "bibtex": "Sillner, A. Y."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Mogle J",
+          "bibtex": "Mogle, J."
+        }
+      ],
+      "owner_author_index": 5,
+      "venue": "BMC Geriatrics",
+      "date": "2023-05-31",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1186/s12877-023-04053-3"
+        },
+        {
+          "label": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37259029/"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://doi.org/10.1186/s12877-023-04053-3"
+      ],
+      "volume": "23",
+      "issue": "1",
+      "pages": "342",
+      "pmid": "37259029",
+      "doi": "10.1186/s12877-023-04053-3",
+      "doi_scope": "work",
+      "subtype": "Research article",
+      "citations": {
+        "source": "Crossref",
+        "count": 13,
+        "as_of": "2026-11-07"
+      }
+    },
+    {
+      "id": "segmentation-anesth-analg-abstract-2026",
+      "kind": "published_abstract",
+      "status": "published",
+      "title": "Evaluating conversational image segmentation for medicine: performance, failure modes, and a fairness audit across seven modalities",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "Anesthesia & Analgesia",
+      "date": "2026-05",
+      "links": [
+        {
+          "label": "Supplement DOI",
+          "url": "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+        }
+      ],
+      "related_ids": [
+        "segmentation-medrxiv-2025",
+        "segmentation-iars-2026"
+      ],
+      "sources": [
+        "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+      ],
+      "volume": "142",
+      "issue": "5S",
+      "pages": "1134",
+      "doi": "10.1213/01.ane.0001282976.51283.05",
+      "doi_scope": "supplement",
+      "subtype": "Conference abstract"
+    },
+    {
+      "id": "fda-devices-anesth-analg-abstract-2026",
+      "kind": "published_abstract",
+      "status": "published",
+      "title": "Anesthetic device innovation from 2000 to 2023: a comprehensive analysis of FDA authorization trends from 4,131 approvals by device category, regulatory pathway, and approval time",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Fuleihan A",
+          "bibtex": "Fuleihan, A."
+        },
+        {
+          "display": "Wenyon S",
+          "bibtex": "Wenyon, S."
+        },
+        {
+          "display": "Menta A",
+          "bibtex": "Menta, A."
+        },
+        {
+          "display": "Xu M",
+          "bibtex": "Xu, M."
+        },
+        {
+          "display": "Joseph J",
+          "bibtex": "Joseph, J."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "Anesthesia & Analgesia",
+      "date": "2026-05",
+      "links": [
+        {
+          "label": "Supplement DOI",
+          "url": "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+        }
+      ],
+      "related_ids": [
+        "fda-devices-iars-2026"
+      ],
+      "sources": [
+        "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+      ],
+      "volume": "142",
+      "issue": "5S",
+      "pages": "312",
+      "doi": "10.1213/01.ane.0001282976.51283.05",
+      "doi_scope": "supplement",
+      "subtype": "Conference abstract"
+    },
+    {
+      "id": "sta-power-talk-2027",
+      "kind": "presentation",
+      "status": "accepted",
+      "title": "More Data, More Information? What AI Actually Learns from the OR",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "Society for Technology in Anesthesia 2027 Annual Meeting - Power Talk",
+      "date": "2027-01-17",
+      "links": [
+        {
+          "label": "Meeting",
+          "url": "https://www.stahq.org/event/2027"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://www.stahq.org/event/2027"
+      ],
+      "subtype": "Power Talk"
+    },
+    {
+      "id": "waveform-anesthesiology-2026",
+      "kind": "presentation",
+      "status": "presented",
+      "title": "Interpretable machine learning of intraoperative waveforms for AKI and ICU risk discrimination",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Wingert TE",
+          "bibtex": "Wingert, T. E."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "ANESTHESIOLOGY 2026",
+      "date": "2026-10-17",
+      "links": [
+        {
+          "label": "Conference record",
+          "url": "https://www.abstractsonline.com/pp8/#!/21448/presentation/6835"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://www.abstractsonline.com/pp8/#!/21448/presentation/6835"
+      ],
+      "subtype": "ePoster"
+    },
+    {
+      "id": "segmentation-iars-2026",
+      "kind": "presentation",
+      "status": "presented",
+      "title": "Evaluating conversational image segmentation for medicine: performance, failure modes, and a fairness audit across seven modalities",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "IARS and SOCCA 2026 Annual Meeting",
+      "date": "2026-05-02",
+      "links": [
+        {
+          "label": "Conference record",
+          "url": "https://events.rdmobile.com/Lists/Details/3271640"
+        }
+      ],
+      "related_ids": [
+        "segmentation-medrxiv-2025",
+        "segmentation-anesth-analg-abstract-2026"
+      ],
+      "sources": [
+        "https://events.rdmobile.com/Lists/Details/3271640"
+      ],
+      "subtype": "Poster"
+    },
+    {
+      "id": "fda-devices-iars-2026",
+      "kind": "presentation",
+      "status": "presented",
+      "title": "Anesthetic device innovation from 2000 to 2023: a comprehensive analysis of FDA authorization trends from 4,131 approvals by device category, regulatory pathway, and approval time",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Fuleihan A",
+          "bibtex": "Fuleihan, A."
+        },
+        {
+          "display": "Wenyon S",
+          "bibtex": "Wenyon, S."
+        },
+        {
+          "display": "Menta A",
+          "bibtex": "Menta, A."
+        },
+        {
+          "display": "Xu M",
+          "bibtex": "Xu, M."
+        },
+        {
+          "display": "Joseph J",
+          "bibtex": "Joseph, J."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "IARS and SOCCA 2026 Annual Meeting",
+      "date": "2026-05-03",
+      "links": [
+        {
+          "label": "Conference record",
+          "url": "https://events.rdmobile.com/Lists/Details/3271692"
+        }
+      ],
+      "related_ids": [
+        "fda-devices-anesth-analg-abstract-2026"
+      ],
+      "sources": [
+        "https://events.rdmobile.com/Lists/Details/3271692"
+      ],
+      "subtype": "Poster"
+    },
+    {
+      "id": "aki-anesthesiology-2025",
+      "kind": "presentation",
+      "status": "presented",
+      "title": "Using intraoperative data via machine learning to predict postoperative AKI in noncardiac surgery",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Kim A",
+          "bibtex": "Kim, A."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Shah KH",
+          "bibtex": "Shah, K. H."
+        },
+        {
+          "display": "Xu MC",
+          "bibtex": "Xu, M. C."
+        },
+        {
+          "display": "Li M",
+          "bibtex": "Li, M."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "ANESTHESIOLOGY 2025",
+      "date": "2025-10-13",
+      "links": [
+        {
+          "label": "Conference record",
+          "url": "https://www.abstractsonline.com/pp8/#!/20301/presentation/32945"
+        }
+      ],
+      "related_ids": [
+        "aki-jamia-2026"
+      ],
+      "sources": [
+        "https://www.abstractsonline.com/pp8/#!/20301/presentation/32945"
+      ],
+      "subtype": "Oral and ePoster"
+    },
+    {
+      "id": "segmentation-medrxiv-2025",
+      "kind": "preprint",
+      "status": "preprint",
+      "subtype": "Preprint",
+      "title": "Evaluating conversational image segmentation for medicine: performance, failure modes, and a fairness audit across seven modalities",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "medRxiv",
+      "date": "2025-11-23",
+      "doi": "10.1101/2025.11.21.25340008",
+      "doi_scope": "work",
+      "links": [
+        {
+          "label": "Preprint",
+          "url": "https://doi.org/10.1101/2025.11.21.25340008"
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.1101/2025.11.21.25340008"
+      ],
+      "related_ids": [
+        "segmentation-anesth-analg-abstract-2026",
+        "segmentation-iars-2026"
+      ],
+      "summary": {
+        "kind": "Summary",
+        "text": "This preprint evaluates conversational segmentation across seven medical-imaging modalities and audits dermoscopy performance by skin-tone group. Performance varied substantially by modality, with weaker results on some radiologic targets. Differences in mask generation and overlap across the audited skin-tone groups show why aggregate benchmark performance can conceal important failure modes.",
+        "source": "https://doi.org/10.1101/2025.11.21.25340008",
+        "reuse_basis": "Original summary written for this website from the cited public research record."
+      },
+      "citations": {
+        "source": "Crossref",
+        "count": 0,
+        "as_of": "2026-11-07"
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": "MD, expected 2027",
+      "organization": "Thomas Jefferson University",
+      "dates": "2023 - Present"
+    },
+    {
+      "title": "BS, Premedicine, cum laude",
+      "organization": "The Pennsylvania State University",
+      "dates": "2020 - 2022"
+    }
+  ],
+  "appointments": [
+    {
+      "title": "Research Fellow",
+      "organization": "Department of Anesthesiology and Perioperative Medicine, Thomas Jefferson University",
+      "dates": "Sep 2024 - Present"
+    },
+    {
+      "title": "Research Intern",
+      "organization": "Health Design Lab, Thomas Jefferson University",
+      "dates": "Aug 2023 - Present"
+    },
+    {
+      "title": "Interdisciplinary Clinical Research Contributor",
+      "organization": "Departments of Neurosurgery, Vascular Surgery, Family Medicine, and Oncology, Thomas Jefferson University",
+      "dates": "2024 - Present"
+    },
+    {
+      "title": "Research Assistant",
+      "organization": "ReMind Lab, Penn State College of Nursing",
+      "dates": "Aug 2021 - Jun 2024"
+    },
+    {
+      "title": "Clinical Research Coordinator Associate",
+      "organization": "Patel Lab, Stanford University",
+      "dates": "May 2022 - Oct 2022"
+    }
+  ],
+  "honors": [
+    {
+      "title": "Hobart Amory Hare Honor Society",
+      "organization": "Sidney Kimmel Medical College",
+      "dates": "2026"
+    },
+    {
+      "title": "Dean’s Research Award",
+      "organization": "Sidney Kimmel Medical College",
+      "dates": "2025"
+    },
+    {
+      "title": "Student Investigator Award, 2nd place (oral presentation)",
+      "organization": "Alpha Omega Alpha Research Symposium, SKMC",
+      "dates": "2025"
+    },
+    {
+      "title": "Medical Student Best Poster, 2nd place (tie)",
+      "organization": "FMEC Annual Meeting",
+      "dates": "2024"
+    }
+  ]
+}

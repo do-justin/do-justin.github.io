@@ -1,0 +1,2 @@
+{% assign work = site.data.publications.works | where: 'id', entry.key | first %}
+{% if work %}{% include publication.liquid work=work %}{% endif %}

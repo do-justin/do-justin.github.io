@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "identity", "works"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "role", "affiliation", "email", "author_aliases", "links"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "affiliation": {"type": "string", "minLength": 1},
+        "email": {"type": "string", "format": "email"},
+        "author_aliases": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "links": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+        "metrics": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "source_url", "as_of", "citations", "h_index", "i10_index"],
+          "properties": {
+            "source": {"const": "Google Scholar"},
+            "source_url": {"type": "string", "pattern": "^https://scholar\\.google\\.com/citations\\?user=[A-Za-z0-9_-]+(&hl=en)?$"},
+            "as_of": {"type": "string", "format": "date"},
+            "citations": {"type": "integer", "minimum": 0},
+            "h_index": {"type": "integer", "minimum": 0},
+            "i10_index": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "works": {"type": "array", "items": {"$ref": "#/$defs/work"}},
+    "education": {"type": "array", "items": {"$ref": "#/$defs/career_item"}},
+    "appointments": {"type": "array", "items": {"$ref": "#/$defs/career_item"}},
+    "honors": {"type": "array", "items": {"$ref": "#/$defs/career_item"}}
+  },
+  "$defs": {
+    "career_item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "organization", "dates"],
+      "properties": {"title": {"type": "string", "minLength": 1}, "organization": {"type": "string", "minLength": 1}, "dates": {"type": "string", "minLength": 1}}
+    },
+    "date": {"type": "string", "pattern": "^[0-9]{4}(-[0-9]{2})?(-[0-9]{2})?$"},
+    "link": {
+      "type": "object", "additionalProperties": false, "required": ["label", "url"],
+      "properties": {"label": {"type": "string", "minLength": 1}, "url": {"type": "string", "format": "uri", "pattern": "^https://"}}
+    },
+    "author": {
+      "type": "object", "additionalProperties": false, "required": ["display", "bibtex"],
+      "properties": {"display": {"type": "string", "minLength": 1}, "bibtex": {"type": "string", "minLength": 1}}
+    },
+    "work": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "status", "title", "authors", "owner_author_index", "venue", "date", "links", "related_ids", "sources"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
+        "kind": {"enum": ["article", "preprint", "published_abstract", "presentation"]},
+        "subtype": {"type": "string", "minLength": 1},
+        "status": {"enum": ["published", "preprint", "accepted", "in_press", "presented"]},
+        "title": {"type": "string", "minLength": 1},
+        "authors": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/author"}},
+        "owner_author_index": {"type": "integer", "minimum": 0},
+        "venue": {"type": "string", "minLength": 1},
+        "date": {"$ref": "#/$defs/date"},
+        "online_date": {"$ref": "#/$defs/date"},
+        "issue_date": {"$ref": "#/$defs/date"},
+        "volume": {"type": "string"}, "issue": {"type": "string"}, "pages": {"type": "string"},
+        "doi": {"type": "string", "pattern": "^10\\.[0-9]{4,9}/\\S+$"},
+        "doi_scope": {"enum": ["work", "supplement"]},
+        "pmid": {"type": "string", "pattern": "^[0-9]+$"},
+        "citations": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "count", "as_of"],
+          "properties": {"source": {"const": "Crossref"}, "count": {"type": "integer", "minimum": 0}, "as_of": {"type": "string", "format": "date"}}
+        },
+        "links": {"type": "array", "items": {"$ref": "#/$defs/link"}},
+        "related_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "sources": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri", "pattern": "^https://"}},
+        "summary": {
+          "type": "object", "additionalProperties": false, "required": ["kind", "text", "source", "reuse_basis"],
+          "properties": {
+            "kind": {"enum": ["Summary", "Abstract"]}, "text": {"type": "string", "minLength": 1},
+            "source": {"type": "string", "format": "uri", "pattern": "^https://"},
+            "reuse_basis": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

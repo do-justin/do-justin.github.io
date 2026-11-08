@@ -18,7 +18,8 @@ On Windows, use Ubuntu WSL 2 with Docker Engine and Compose. From this checkout:
 Preview serves `http://127.0.0.1:8080`; Ctrl+C stops it. Setup installs dependencies
 into a local Docker image. Build runs with container networking disabled and
 generates `_site/`. Python on Windows is used for the preview server and optional
-content commands; content validation requires jsonschema.
+content commands; validation requires jsonschema and the optional CV check
+requires pypdf. Both are installed in the Docker image.
 
 The same Linux/CI workflow is:
 
@@ -28,7 +29,7 @@ docker compose run --rm site
 ```
 
 The image is pinned by digest; Ruby dependencies are locked in `Gemfile.lock`.
-Python requirements are version-pinned. Docker does not need access to private
+Python requirements include pinned transitive dependencies. Docker does not need access to private
 sources, OneDrive, API credentials, or a publication service during rendering.
 
 ## What to edit

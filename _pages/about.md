@@ -2,12 +2,6 @@
 layout: academic-home
 title: About
 permalink: /
-social: false
-selected_papers: false
-announcements:
-  enabled: false
-latest_posts:
-  enabled: false
 ---
 I am a fourth-year medical student at Thomas Jefferson University, currently applying into anesthesiology.
 At Jefferson, I am a research fellow in the Department of Anesthesiology and Perioperative Medicine and a research intern at the Health Design Lab.

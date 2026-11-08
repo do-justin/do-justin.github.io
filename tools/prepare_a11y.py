@@ -32,14 +32,16 @@ def prepare():
         shutil.rmtree(target)
     shutil.copytree(ROOT / '_site', target)
     shutil.copyfile(cache, target / 'axe.min.js')
-    harness = '''<script src="/axe.min.js"></script><script>
+    harness = '''
 window.addEventListener('load',()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}}).then(result=>{
 const out=document.createElement('script');out.type='application/json';out.id='qa-a11y-result';
 out.textContent=JSON.stringify({version:axe.version,violations:result.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>({target:n.target,failureSummary:n.failureSummary}))})),passes:result.passes.length,incomplete:result.incomplete.map(v=>v.id)});document.body.append(out);
-}));</script>'''
+}));'''
+    (target / 'qa-harness.js').write_text(harness, encoding='utf-8')
     for file in target.rglob('*.html'):
         text = file.read_text(encoding='utf-8')
-        file.write_text(text.replace('</body>', harness + '</body>'), encoding='utf-8')
+        scripts = '<script src="/axe.min.js"></script><script src="/qa-harness.js"></script>'
+        file.write_text(text.replace('</body>', scripts + '</body>'), encoding='utf-8')
     print('Prepared axe-core ' + VERSION + ' QA copy; production artifact unchanged')
 
 

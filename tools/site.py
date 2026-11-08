@@ -4,9 +4,8 @@ from __future__ import annotations
 import argparse
 import calendar
 import copy
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 import hashlib
-from html import escape
 from html import unescape
 from html.parser import HTMLParser
 import json
@@ -15,10 +14,9 @@ import re
 import sys
 import time
 from email.utils import parsedate_to_datetime
-from datetime import timezone
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urljoin, urlsplit, unquote
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 import xml.etree.ElementTree as ET
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -133,7 +131,11 @@ def bibliography(data):
         fields["note"] = bib_escape(note)
         if w["links"]:
             fields["url"] = w["links"][0]["url"]
-        entries.append("@article{" + w["id"] + ",\n" + ",\n".join(f"  {k} = {{{v}}}" for k, v in fields.items()) + "\n}")
+        entry_type = "article"
+        if w["kind"] == "preprint":
+            entry_type = "misc"
+            fields["howpublished"] = fields.pop("journal")
+        entries.append("@" + entry_type + "{" + w["id"] + ",\n" + ",\n".join(f"  {k} = {{{v}}}" for k, v in fields.items()) + "\n}")
     return "\n\n".join(entries) + "\n"
 
 
@@ -216,11 +218,21 @@ def export_profile(profile, selection):
     return validate(bundle)
 
 
-def cached_request(url, cache, user_agent, accept, interval, opener=urlopen, sleeper=time.sleep):
+class NoMetadataRedirects(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ValueError("Metadata redirects are not allowed")
+
+
+METADATA_OPENER = build_opener(NoMetadataRedirects())
+
+
+def cached_request(url, cache, user_agent, accept, interval, opener=METADATA_OPENER.open, sleeper=time.sleep):
     cache = Path(cache)
     cache.mkdir(parents=True, exist_ok=True)
     key = cache / (hashlib.sha256(url.encode()).hexdigest() + ".cache")
     if key.exists() and time.time() - key.stat().st_mtime < 7 * 86400:
+        if key.stat().st_size > 5_000_000:
+            raise ValueError("Cached metadata response too large")
         return key.read_bytes()
     for attempt in range(3):
         sleeper(interval if attempt == 0 else 2 ** attempt)
@@ -256,7 +268,11 @@ def crossref_metadata(payload):
     for source, target in (("title", "title"), ("container-title", "venue")):
         if isinstance(message.get(source), list) and message[source] and isinstance(message[source][0], str):
             result[target] = message[source][0]
-    if isinstance(message.get('author'), list) and all(isinstance(a, dict) for a in message['author']):
+    if 'author' in message:
+        if not isinstance(message['author'], list) or any(
+                not isinstance(a, dict) or any(not isinstance(a[k], str) for k in ('given', 'family', 'name') if k in a)
+                for a in message['author']):
+            raise ValueError('Malformed Crossref authors')
         result["authors"] = [{k: a[k] for k in ("given", "family", "name") if k in a} for a in message["author"]]
     for key in ("volume", "issue", "page", "published-online", "published-print", "update-to"):
         if key in message:
@@ -264,6 +280,8 @@ def crossref_metadata(payload):
     if "is-referenced-by-count" in message:
         result["crossref_citations"] = message["is-referenced-by-count"]
     if message.get('DOI'):
+        if not isinstance(message['DOI'], str):
+            raise ValueError('Malformed Crossref DOI')
         result['doi'] = normalize_doi(message['DOI'])
     return result
 
@@ -363,16 +381,20 @@ def audit_artifact(directory):
         raise ValueError("Built homepage missing")
     errors, external = [], set()
     parsed = {}
-    allowed_root = {"index.html", "404.html", "robots.txt", "sitemap.xml"}
+    allowed = {"index.html", "404.html", "research/index.html", "publications/index.html",
+               "robots.txt", "sitemap.xml", "assets/css/main.css", "assets/css/tailwind.css",
+               "assets/js/nav-toggle.js", "assets/img/icon.svg", "assets/img/justin-do.jpg",
+               "assets/pdf/Justin_Do_CV.pdf"}
+    allowed.update('assets/bib/' + w['id'] + '.bib' for w in read_json(PROFILE)['works'] if w['kind'] != 'presentation')
     for p in directory.rglob("*"):
         if not p.is_file():
             continue
         rel = p.relative_to(directory)
-        if rel.parts[0] not in {"assets", "research", "publications"} and str(rel) not in allowed_root:
+        if p.is_symlink() or not p.resolve().is_relative_to(directory):
+            errors.append("Linked artifact outside review: " + rel.as_posix())
+            continue
+        if rel.as_posix() not in allowed:
             errors.append("Unexpected artifact: " + rel.as_posix())
-        reviewed_binary = rel.as_posix() in {"assets/img/justin-do.jpg", "assets/pdf/Justin_Do_CV.pdf"}
-        if p.suffix not in (".html", ".css", ".js", ".xml", ".txt", ".bib", ".json", ".svg") and not reviewed_binary:
-            errors.append("Unreviewed binary artifact: " + rel.as_posix())
         if p.suffix in (".html", ".json", ".txt", ".xml", ".bib"):
             text = p.read_text(encoding="utf-8")
             if re.search(r"(?<![A-Za-z])[A-Za-z]:[\\/]|/home/|/Users/|eras-planning|application_profile|Einstein|Albert Einstein|password|access_token", text, re.I):
@@ -385,12 +407,18 @@ def audit_artifact(directory):
         base = "/" + p.relative_to(directory).as_posix()
         for link in doc.links:
             url = urlsplit(urljoin("https://do-justin.github.io" + base, link))
-            if url.scheme in ("mailto", "tel", "data"):
+            if url.scheme in ("mailto", "tel"):
+                continue
+            if url.scheme not in ('http', 'https'):
+                errors.append("Unsafe link scheme: " + link)
                 continue
             if url.netloc != "do-justin.github.io":
                 external.add(link)
                 continue
-            target = directory / unquote(url.path).lstrip("/")
+            target = (directory / unquote(url.path).lstrip("/")).resolve()
+            if not target.is_relative_to(directory):
+                errors.append("Internal link outside artifact: " + link)
+                continue
             if target.is_dir():
                 target /= "index.html"
             if not target.is_file():

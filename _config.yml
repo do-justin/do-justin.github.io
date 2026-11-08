@@ -55,10 +55,6 @@ back_to_top: false
 search_enabled: false
 serve_og_meta: true
 serve_schema_org: false
-third_party_libraries:
-  google_fonts:
-    url:
-      fonts: /assets/css/font-stack.css
 scholar:
   source: ./_bibliography
   bibliography: papers.bib

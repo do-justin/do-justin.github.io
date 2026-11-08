@@ -42,7 +42,8 @@ python tools/site.py refresh --output $refreshPath --email justin.do@students.je
 
 This calls exact DOI/PMID endpoints in Crossref and PubMed, caches responses for
 seven days, uses sequential conservative request rates, 20-second timeouts, and
-at most three attempts. A long Retry-After stops a lookup rather than retrying
+at most three attempts. Redirects are refused before requesting their target;
+the CLI uses exact provider endpoints. A long Retry-After stops a lookup rather than retrying
 too soon. `metadata-proposals.json` retains approved/candidate values, meaningful
 field changes, authorship alerts, and correction/retraction relationships.
 Missing/incomplete records and errors do not delete or overwrite approved works.

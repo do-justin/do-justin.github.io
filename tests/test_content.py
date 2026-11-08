@@ -5,7 +5,9 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import threading
 import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.error import HTTPError, URLError
 
 spec = importlib.util.spec_from_file_location('website', Path(__file__).resolve().parents[1] / 'tools/site.py')
@@ -97,6 +99,13 @@ class PublicContractTests(unittest.TestCase):
         self.assertIn('García, M.', bib); self.assertIn('{Study Group}', bib)
         self.assertNotIn('<strong>', bib)
 
+    def test_preprint_is_not_exported_as_a_journal_article(self):
+        d = example(); d['works'][0].update(kind='preprint', status='preprint')
+        bib = site.bibliography(d)
+        self.assertTrue(bib.startswith('@misc{'))
+        self.assertIn('howpublished = {Example Journal}', bib)
+        self.assertIn('note = {Preprint}', bib)
+
     def test_generation_preserves_year_only_and_source(self):
         d = example(); original = copy.deepcopy(d)
         with tempfile.TemporaryDirectory() as t:
@@ -152,6 +161,28 @@ class PublicContractTests(unittest.TestCase):
 
 
 class MetadataTests(unittest.TestCase):
+    def test_provider_redirect_never_requests_its_target(self):
+        requested = []
+        class RedirectingProvider(BaseHTTPRequestHandler):
+            def do_GET(self):
+                requested.append(self.path)
+                self.send_response(302 if self.path == '/provider' else 200)
+                self.send_header('Location', '/internal')
+                self.end_headers()
+            def log_message(self, *args):
+                pass
+        server = ThreadingHTTPServer(('127.0.0.1', 0), RedirectingProvider)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            with tempfile.TemporaryDirectory() as t:
+                with self.assertRaisesRegex(ValueError, 'redirects are not allowed'):
+                    site.cached_request(f'http://127.0.0.1:{server.server_port}/provider', t, 'test', 'application/json', 0)
+                self.assertFalse(list(Path(t).glob('*.cache')))
+            self.assertEqual(requested, ['/provider'])
+        finally:
+            server.shutdown(); server.server_close(); worker.join()
+
     def test_malformed_and_incomplete_responses(self):
         with self.assertRaises(ValueError): site.crossref_metadata(b'bad json')
         with self.assertRaises(Exception): site.pubmed_metadata(b'<broken>')
@@ -206,6 +237,22 @@ class MetadataTests(unittest.TestCase):
             self.assertIn('authors', result[0]['changes'])
             self.assertEqual(len(result[0]['alerts']), 2)
 
+    def test_malformed_author_and_doi_types_are_isolated_to_the_record(self):
+        for message in ({'author': [{'given': 42}]}, {'author': [None]}, {'DOI': ['bad']}):
+            d = example(); original = copy.deepcopy(d)
+            with tempfile.TemporaryDirectory() as t:
+                result = site.refresh(d, t, 'example@example.org', fetch=lambda *args: json.dumps({'message': message}).encode())
+            self.assertEqual(result[0]['status'], 'error')
+            self.assertEqual(d, original)
+
+    def test_oversized_cached_metadata_is_rejected(self):
+        with tempfile.TemporaryDirectory() as t:
+            url = 'https://example.org'
+            cache = Path(t) / (site.hashlib.sha256(url.encode()).hexdigest() + '.cache')
+            cache.write_bytes(b' ' * 5_000_001)
+            with self.assertRaisesRegex(ValueError, 'too large'):
+                site.cached_request(url, t, 'test', 'application/json', .4)
+
 
 class ArtifactTests(unittest.TestCase):
     def test_unknown_files_and_broken_anchors_fail(self):
@@ -215,6 +262,20 @@ class ArtifactTests(unittest.TestCase):
             (root / 'index.html').write_text('<h1 id="ok">Example</h1>')
             (root / 'private.json').write_text('{}')
             with self.assertRaisesRegex(ValueError, 'Unexpected artifact'): site.audit_artifact(root)
+
+    def test_unexpected_assets_are_rejected_even_if_they_are_text(self):
+        for name in ('assets/private.json', 'assets/bib/unreviewed.bib', 'research/notes.html'):
+            with tempfile.TemporaryDirectory() as t:
+                root = Path(t); (root / 'index.html').write_text('<h1>Example</h1>')
+                path = root / name; path.parent.mkdir(parents=True); path.write_text('synthetic')
+                with self.assertRaisesRegex(ValueError, 'Unexpected artifact'): site.audit_artifact(root)
+
+    def test_script_urls_and_encoded_traversal_are_rejected(self):
+        for link, error in (('javascript:alert(1)', 'Unsafe link scheme'),
+                            ('/%2e%2e/outside.html', 'outside artifact')):
+            with tempfile.TemporaryDirectory() as t:
+                root = Path(t); (root / 'index.html').write_text('<a href="' + link + '">Example</a>')
+                with self.assertRaisesRegex(ValueError, error): site.audit_artifact(root)
 
 
 if __name__ == '__main__': unittest.main()

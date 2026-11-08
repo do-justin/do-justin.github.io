@@ -13,9 +13,14 @@ layouts, navigation, styles and scripts remain in the pinned theme gem. The
 homepage uses a local layout with profile/credentials beside biography/publications,
 informed by ACAD and Minimal Light. Other local overrides cover the bibliography
 display, a Sass extension, theme-asset cache resolution and a skip link.
-The two gem-owned overrides are acknowledged in `.al-folio-overrides.yml`.
+The four gem-owned overrides are acknowledged in `.al-folio-overrides.yml`.
+The head and script includes load only the styles and navigation used here;
+code-copy buttons, notebooks, tooltips, blog and teaching styles are omitted.
+The browser policy permits same-origin scripts and assets, blocks inline
+scripts, network API calls, embeds and form submissions, and retains inline
+styles for the native theme. Metadata and canonical URLs still use al-folio.
 The upgrade audit's optional icon-plugin notice is intentional: the site uses
-text links and the native CSS navigation control rather than an icon library.
+text links and native navigation rather than an icon library.
 
 Each work has a stable ID and distinct kind/status. Ordered authors and an
 explicit owner-author index control highlighting. Article DOI uniqueness does
@@ -31,5 +36,6 @@ existing CV are the only permitted binary assets.
 Export and refresh are local-only operations with explicit external staging
 paths. They never write to the private career system. CI never runs them.
 Provider outages produce review reports while preserving known-good content.
+Refresh refuses HTTP redirects and caps both downloaded and cached payloads.
 Google Scholar totals are a dated, verified snapshot; Crossref per-work counts
 are labeled separately. Neither metric source determines authorship or status.

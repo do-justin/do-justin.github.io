@@ -13,6 +13,9 @@ from urllib.error import HTTPError, URLError
 spec = importlib.util.spec_from_file_location('website', Path(__file__).resolve().parents[1] / 'tools/site.py')
 site = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(site)
+qa_spec = importlib.util.spec_from_file_location('website_a11y', site.ROOT / 'tools/prepare_a11y.py')
+a11y = importlib.util.module_from_spec(qa_spec)
+qa_spec.loader.exec_module(a11y)
 
 
 def example():
@@ -175,11 +178,13 @@ class MetadataTests(unittest.TestCase):
         worker = threading.Thread(target=server.serve_forever, daemon=True)
         worker.start()
         try:
-            with tempfile.TemporaryDirectory() as t:
-                with self.assertRaisesRegex(ValueError, 'redirects are not allowed'):
-                    site.cached_request(f'http://127.0.0.1:{server.server_port}/provider', t, 'test', 'application/json', 0)
-                self.assertFalse(list(Path(t).glob('*.cache')))
-            self.assertEqual(requested, ['/provider'])
+            for opener in (site.METADATA_OPENER.open, a11y.ARCHIVE_OPENER.open):
+                requested.clear()
+                with self.subTest(opener=opener), tempfile.TemporaryDirectory() as t:
+                    with self.assertRaisesRegex(ValueError, 'redirects are not allowed'):
+                        site.cached_request(f'http://127.0.0.1:{server.server_port}/provider', t, 'test', 'application/json', 0, opener=opener)
+                    self.assertFalse(list(Path(t).glob('*.cache')))
+                    self.assertEqual(requested, ['/provider'])
         finally:
             server.shutdown(); server.server_close(); worker.join()
 

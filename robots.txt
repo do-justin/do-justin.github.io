@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://do-justin.github.io/sitemap.xml

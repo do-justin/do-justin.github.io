@@ -1,0 +1,234 @@
+<!doctype html><html lang="en">
+  <!-- Head -->
+  <head>
+    
+    
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Research | Justin Do
+    
+  
+</title>
+<meta name="author" content="Justin Do">
+<meta name="description" content="Research on perioperative risk prediction, physiologic waveforms, and multimodal medical AI by Justin Do, a medical student at Thomas Jefferson University.">
+
+
+
+
+
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="Justin Do">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Justin Do | Research">
+  <meta property="og:url" content="https://do-justin.github.io/research/">
+  <meta property="og:description" content="Research on perioperative risk prediction, physiologic waveforms, and multimodal medical AI by Justin Do, a medical student at Thomas Jefferson University.">
+  
+  <meta property="og:locale" content="en">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research">
+  <meta name="twitter:description" content="Research on perioperative risk prediction, physiologic waveforms, and multimodal medical AI by Justin Do, a medical student at Thomas Jefferson University.">
+  
+  
+
+
+
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>:root { --max-content-width: 1000px; }</style>
+<link rel="stylesheet" href="/assets/css/tailwind.css?v=8ec12492b950">
+<link rel="stylesheet" href="/assets/css/main.css?v=82882c0e15ce">
+<link rel="icon" href="/assets/img/icon.svg?v=3d5229ef33e8">
+<link rel="canonical" href="https://do-justin.github.io/research/">
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer"><a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Justin Do
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">Publications
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/research/">Research
+                    
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main" id="main-content" tabindex="-1">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Research</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <h2 id="perioperative-prediction-and-physiologic-signals">Perioperative prediction and physiologic signals</h2>
+
+<div class="research-project">
+  <h3 id="incremental-value-of-intraoperative-data">Incremental value of intraoperative data</h3>
+
+  <p>In our JAMIA Open study of 46,204 adults undergoing 57,055 noncardiac operations, we tested whether intraoperative measurements improved prediction of stage 2 or 3 postoperative acute kidney injury beyond preoperative information. We also compared engineered summary features with an MLP/LSTM model that retained temporal sequence.</p>
+
+  <p>Adding low-frequency intraoperative data improved gradient-boosted-tree AUROC from 0.891 to 0.896. The temporal model did not outperform simpler tabular approaches. I led study design, cohort construction, model development, validation, and manuscript preparation with clinical and computational collaborators.</p>
+
+  <p><a href="https://doi.org/10.1093/jamiaopen/ooag092">Paper</a> · <a href="/publications/#aki-jamia-2026">Citation</a></p>
+
+  <h3 id="high-frequency-waveform-analysis">High-frequency waveform analysis</h3>
+
+  <p>Building on our JAMIA Open study, we are investigating whether high-frequency intraoperative waveforms improve postoperative risk prediction. We extract time-series features from ECG, plethysmography, capnography, and airway-pressure waveforms in VitalDB and test their added value in interpretable tabular models.</p>
+
+  <p>I developed the waveform-processing and feature-extraction pipeline and led the modeling and analysis. We presented the work as an ePoster at ANESTHESIOLOGY 2026, with the manuscript currently being drafted.</p>
+
+  <p><a href="https://www.abstractsonline.com/pp8/#!/21448/presentation/6835">Conference record</a></p>
+</div>
+
+<h2 id="evaluation-of-multimodal-medical-ai">Evaluation of multimodal medical AI</h2>
+
+<div class="research-project">
+  <p>I’m interested in the emerging capabilities of large language models. When <a href="https://developers.googleblog.com/en/conversational-image-segmentation-gemini-2-5/">Gemini 2.5</a> introduced image segmentation through text prompts, I wanted to see how well it worked on medical images. We evaluated Gemini 2.5 Flash and Flash-Lite on 13,086 image-mask pairs across seven imaging modalities, comparing their outputs with expert masks.</p>
+
+  <p>Performance was strong on several photographic targets and weak on some radiologic structures. In our dermoscopy audit, masks were generated less often and had lower overlap with expert masks for darker-tone images. I designed and implemented the benchmark, including the skin-tone audit, and led the analysis and writing.</p>
+
+  <p><a href="https://doi.org/10.1101/2025.11.21.25340008">Preprint</a> · <a href="/publications/#segmentation-medrxiv-2025">Related outputs</a></p>
+</div>
+
+<h2 id="home-fall-risk-assessment">Home fall-risk assessment</h2>
+
+<div class="research-project">
+  <p>At Jefferson’s Health Design Lab, I led development and evaluation of a multimodal workflow that identifies home hazards and visualizes suggested modifications. The JMIR Aging research letter reports a formative evaluation using 27 publicly licensed home images.</p>
+
+  <p>Reviewers preferred the enhanced, CDC-grounded recommendations over baseline prompting, while some generated visualizations introduced hazards. I led prototyping, evaluation coordination, analysis, and manuscript drafting. The study evaluates a proposed workflow; clinical deployment and effects on falls remain untested.</p>
+
+  <p><a href="https://doi.org/10.2196/77591">Research letter</a> · <a href="/publications/#fall-risk-jmir-2026">Citation</a></p>
+</div>
+
+<h2 id="future-directions">Future directions</h2>
+
+<p>I hope to externally validate these models using multi-center data. I also plan to compare models trained directly on waveform sequences, including pretrained foundation models, with engineered features.</p>
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="sticky-bottom mt-5" role="contentinfo">
+    
+
+    <div class="container">
+      
+  &copy; Copyright 2026
+  Justin
+  
+  Do. Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+  
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <script defer src="/assets/js/nav-toggle.js?v=1b93962a4ac5"></script>
+
+  </body>
+</html>

@@ -10,6 +10,7 @@ latest_posts:
   enabled: false
 ---
 I am a fourth-year medical student at Thomas Jefferson University, currently applying into anesthesiology.
+At Jefferson, I am a research fellow in the Department of Anesthesiology and Perioperative Medicine and a research intern at the Health Design Lab.
 
 My research focuses on the value of multimodal data for clinical prediction. I study whether intraoperative time series and physiologic waveforms add information beyond tabular clinical variables, and how we can interpret the models that use them. I hope to combine these signals with text, images, and audio.
 

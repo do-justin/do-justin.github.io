@@ -414,7 +414,9 @@
           "url": "https://pubmed.ncbi.nlm.nih.gov/41112889/"
         }
       ],
-      "related_ids": [],
+      "related_ids": [
+        "graphic-medicine-fmec-2024"
+      ],
       "sources": [
         "https://doi.org/10.1007/s40670-025-02377-w"
       ],
@@ -1173,6 +1175,94 @@
       ]
     },
     {
+      "id": "graphic-medicine-fmec-2024",
+      "kind": "presentation",
+      "status": "presented",
+      "subtype": "Poster",
+      "title": "When mentors become monsters: using cartoons to explore hierarchy and feelings of incompetence in medical training",
+      "authors": [
+        {
+          "display": "Fishman C",
+          "bibtex": "Fishman, C."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Markham F",
+          "bibtex": "Markham, F."
+        }
+      ],
+      "owner_author_index": 1,
+      "venue": "Family Medicine Education Consortium Annual Meeting",
+      "date": "2024-09-21",
+      "abstract_number": "133",
+      "location": "Philadelphia, PA",
+      "links": [
+        {
+          "label": "Program",
+          "url": "https://www.fmec.net/assets/FMEC%20program%202024_FINAL%20DRAFT.pdf"
+        },
+        {
+          "label": "Poster award",
+          "url": "https://www.fmec.net/assets/10-7-2024%20FMEC%20Announces%202024%20Poster%20Presentation%20Winners.pdf"
+        }
+      ],
+      "sources": [
+        "https://www.fmec.net/assets/FMEC%20program%202024_FINAL%20DRAFT.pdf",
+        "https://www.fmec.net/assets/10-7-2024%20FMEC%20Announces%202024%20Poster%20Presentation%20Winners.pdf"
+      ],
+      "related_ids": [
+        "graphic-medicine-2025"
+      ]
+    },
+    {
+      "id": "personality-affect-sas-2022",
+      "kind": "presentation",
+      "status": "presented",
+      "subtype": "Poster",
+      "title": "Personality moderates affective responses to daily memory lapses in middle-aged and older adults without cognitive impairment",
+      "authors": [
+        {
+          "display": "Bratlee-Whitaker EY",
+          "bibtex": "Bratlee-Whitaker, E. Y."
+        },
+        {
+          "display": "Hill NL",
+          "bibtex": "Hill, N. L."
+        },
+        {
+          "display": "Mogle J",
+          "bibtex": "Mogle, J."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        }
+      ],
+      "owner_author_index": 3,
+      "venue": "Society for Affective Science Virtual Scientific Meeting",
+      "date": "2022-03-31",
+      "abstract_number": "2-F-88",
+      "location": "Virtual",
+      "links": [
+        {
+          "label": "Program",
+          "url": "https://society-for-affective-science.org/wp-content/uploads/2023/09/2022-SAS-Program-v9.pdf#page=44"
+        },
+        {
+          "label": "Coauthor record",
+          "url": "https://orcid.org/0000-0002-6082-228X"
+        }
+      ],
+      "sources": [
+        "https://society-for-affective-science.org/wp-content/uploads/2023/09/2022-SAS-Program-v9.pdf",
+        "https://pub.orcid.org/v3.0/0000-0002-6082-228X/work/210484195"
+      ],
+      "related_ids": []
+    },
+    {
       "id": "segmentation-medrxiv-2025",
       "kind": "preprint",
       "status": "preprint",
@@ -1278,8 +1368,8 @@
       "dates": "2025"
     },
     {
-      "title": "Student Investigator Award, 2nd place (oral presentation)",
-      "organization": "Alpha Omega Alpha Research Symposium, SKMC",
+      "title": "Outstanding Oral Presentation (Design Track), 1st place",
+      "organization": "Scholarly Inquiry Research Project Symposium, SKMC",
       "dates": "2025"
     },
     {

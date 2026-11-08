@@ -71,6 +71,25 @@ class PublicContractTests(unittest.TestCase):
         d = example(); d['works'][0]['related_ids'] = ['unknown-work']
         with self.assertRaises(ValueError): site.validate(d)
 
+    def test_conference_identifiers_and_date_ranges(self):
+        d = example(); w = d['works'][0]
+        w.update(kind='presentation', status='presented', date='2025-09-04', end_date='2025-09-07', abstract_number='P-107', location='Example City')
+        site.validate(d)
+        with tempfile.TemporaryDirectory() as t:
+            site.generate(d, t)
+            generated = site.read_json(Path(t) / '_data/publications.json')['works'][0]
+            self.assertEqual(generated['date_label'], 'Sep 4–7, 2025')
+            self.assertEqual(generated['abstract_number'], 'P-107')
+        w['end_date'] = '2025-09-03'
+        with self.assertRaises(ValueError): site.validate(d)
+        w.pop('end_date'); w.update(kind='article', status='published')
+        with self.assertRaises(ValueError): site.validate(d)
+
+    def test_published_abstract_number_reaches_bibtex(self):
+        d = example(); w = d['works'][0]; w.update(kind='published_abstract', abstract_number='D-107')
+        site.validate(d)
+        self.assertIn('Abstract D-107', site.bibliography(d))
+
     def test_bibliography_is_deterministic_and_preserves_names(self):
         d = example()
         self.assertEqual(site.bibliography(d), site.bibliography(copy.deepcopy(d)))

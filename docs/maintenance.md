@@ -67,6 +67,13 @@ findings against controlling sources. Change `_data/featured.yml` to select
 homepage works. Never turn an accepted presentation into a delivered one solely
 because its date has passed.
 
+For conference outputs, store verified program codes in `abstract_number`,
+presentation format in `subtype`, and city/region in `location`. A meeting date
+range uses `date` plus `end_date`; do not invent a specific presentation day.
+Keep journal page numbers in `pages`. Submission IDs, URL database IDs, screen
+numbers and presentation slots are not interchangeable with abstract numbers.
+Unknown or unassigned abstract numbers remain omitted until verified.
+
 Verify the intended Google Scholar profile before updating totals, h-index and
 i10-index in `identity.metrics`; record the source URL and verification date.
 Per-work citation snapshots identify Crossref and their own check date. Counts

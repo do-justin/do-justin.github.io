@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILE = ROOT / "content/public-profile.json"
 GROUPS = [("article", "Journal articles"), ("preprint", "Preprints"),
           ("published_abstract", "Published conference abstracts"), ("presentation", "Selected presentations")]
-STATUS = {"published": "Published", "preprint": "Preprint · not peer reviewed",
+STATUS = {"published": "Published", "preprint": "Preprint",
           "accepted": "Accepted", "in_press": "In press", "presented": "Presented"}
 
 
@@ -74,9 +74,13 @@ def validate(data, today=None):
         if w["id"] in ids:
             raise ValueError("Duplicate work ID: " + w["id"])
         ids.add(w["id"])
-        for key in ("date", "online_date", "issue_date"):
+        for key in ("date", "online_date", "issue_date", "end_date"):
             if key in w:
                 valid_date(w[key])
+        if w.get('end_date') and (w['kind'] != 'presentation' or len(w['date']) != 10 or w['end_date'] < w['date']):
+            raise ValueError('Invalid presentation date range: ' + w['id'])
+        if w.get('abstract_number') and w['kind'] not in ('presentation', 'published_abstract'):
+            raise ValueError('Abstract numbers belong to conference outputs: ' + w['id'])
         idx = w["owner_author_index"]
         if idx >= len(w["authors"]) or w["authors"][idx]["display"] not in data["identity"]["author_aliases"]:
             raise ValueError("Invalid owner author: " + w["id"])
@@ -123,7 +127,10 @@ def bibliography(data):
         for source, target in (("volume", "volume"), ("issue", "number"), ("pages", "pages"), ("doi", "doi"), ("pmid", "pmid")):
             if w.get(source):
                 fields[target] = bib_escape(w[source])
-        fields["note"] = bib_escape(w.get("subtype", STATUS[w["status"]]))
+        note = w.get("subtype", STATUS[w["status"]])
+        if w.get('abstract_number'):
+            note += '; Abstract ' + w['abstract_number']
+        fields["note"] = bib_escape(note)
         if w["links"]:
             fields["url"] = w["links"][0]["url"]
         entries.append("@article{" + w["id"] + ",\n" + ",\n".join(f"  {k} = {{{v}}}" for k, v in fields.items()) + "\n}")
@@ -140,6 +147,12 @@ def generate(data, root=ROOT):
         w["status_label"] = STATUS[w["status"]]
         year, *rest = w["date"].split("-")
         w["date_label"] = (calendar.month_abbr[int(rest[0])] + " " if rest else "") + (str(int(rest[1])) + ", " if len(rest) > 1 else "") + year
+        if w.get('end_date'):
+            start, end = date.fromisoformat(w['date']), date.fromisoformat(w['end_date'])
+            if (start.year, start.month) == (end.year, end.month):
+                w['date_label'] = f'{calendar.month_abbr[start.month]} {start.day}–{end.day}, {start.year}'
+            else:
+                w['date_label'] += f'–{calendar.month_abbr[end.month]} {end.day}, {end.year}'
     display["works"].sort(key=lambda w: (w["date"], w["id"]), reverse=True)
     display["groups"] = [{"kind": k, "title": title} for k, title in GROUPS if any(w["kind"] == k for w in data["works"])]
     write_json(root / "_data/publications.json", display)
@@ -190,7 +203,7 @@ def export_profile(profile, selection):
         for src, dst in (("volume", "volume"), ("issue_number", "issue"), ("pages", "pages"), ("pmid", "pmid")):
             if raw.get(src):
                 w[dst] = str(raw[src])
-        for key in ("doi", "doi_scope", "subtype", "summary", "online_date", "issue_date", "citations"):
+        for key in ("doi", "doi_scope", "subtype", "summary", "online_date", "issue_date", "citations", "abstract_number", "location", "end_date"):
             if key in pick:
                 w[key] = pick[key]
         works.append(w)

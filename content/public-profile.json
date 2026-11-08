@@ -289,7 +289,9 @@
           "url": "https://doi.org/10.1016/j.jvsvi.2025.100318"
         }
       ],
-      "related_ids": [],
+      "related_ids": [
+        "vascular-readability-evs-2025"
+      ],
       "sources": [
         "https://doi.org/10.1016/j.jvsvi.2025.100318"
       ],
@@ -779,14 +781,16 @@
         "segmentation-iars-2026"
       ],
       "sources": [
-        "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+        "https://doi.org/10.1213/01.ane.0001282976.51283.05",
+        "https://events.rdmobile.com/Lists/Details/3271640"
       ],
       "volume": "142",
       "issue": "5S",
       "pages": "1134",
       "doi": "10.1213/01.ane.0001282976.51283.05",
       "doi_scope": "supplement",
-      "subtype": "Conference abstract"
+      "subtype": "Conference abstract",
+      "abstract_number": "D-107"
     },
     {
       "id": "fda-devices-anesth-analg-abstract-2026",
@@ -832,14 +836,16 @@
         "fda-devices-iars-2026"
       ],
       "sources": [
-        "https://doi.org/10.1213/01.ane.0001282976.51283.05"
+        "https://doi.org/10.1213/01.ane.0001282976.51283.05",
+        "https://events.rdmobile.com/Lists/Details/3271692"
       ],
       "volume": "142",
       "issue": "5S",
       "pages": "312",
       "doi": "10.1213/01.ane.0001282976.51283.05",
       "doi_scope": "supplement",
-      "subtype": "Conference abstract"
+      "subtype": "Conference abstract",
+      "abstract_number": "E-47"
     },
     {
       "id": "sta-power-talk-2027",
@@ -853,7 +859,7 @@
         }
       ],
       "owner_author_index": 0,
-      "venue": "Society for Technology in Anesthesia 2027 Annual Meeting - Power Talk",
+      "venue": "Society for Technology in Anesthesia 2027 Annual Meeting",
       "date": "2027-01-17",
       "links": [
         {
@@ -865,7 +871,8 @@
       "sources": [
         "https://www.stahq.org/event/2027"
       ],
-      "subtype": "Power Talk"
+      "subtype": "Power Talk",
+      "location": "Scottsdale, AZ"
     },
     {
       "id": "waveform-anesthesiology-2026",
@@ -903,7 +910,9 @@
       "sources": [
         "https://www.abstractsonline.com/pp8/#!/21448/presentation/6835"
       ],
-      "subtype": "ePoster"
+      "subtype": "ePoster",
+      "abstract_number": "A1295",
+      "location": "San Diego, CA"
     },
     {
       "id": "segmentation-iars-2026",
@@ -944,7 +953,9 @@
       "sources": [
         "https://events.rdmobile.com/Lists/Details/3271640"
       ],
-      "subtype": "Poster"
+      "subtype": "Poster",
+      "abstract_number": "D-107",
+      "location": "Montreal, QC, Canada"
     },
     {
       "id": "fda-devices-iars-2026",
@@ -992,7 +1003,9 @@
       "sources": [
         "https://events.rdmobile.com/Lists/Details/3271692"
       ],
-      "subtype": "Poster"
+      "subtype": "Poster",
+      "abstract_number": "E-47",
+      "location": "Montreal, QC, Canada"
     },
     {
       "id": "aki-anesthesiology-2025",
@@ -1048,7 +1061,9 @@
       "sources": [
         "https://www.abstractsonline.com/pp8/#!/20301/presentation/32945"
       ],
-      "subtype": "Oral and ePoster"
+      "subtype": "Oral and ePoster",
+      "abstract_number": "A3136",
+      "location": "San Antonio, TX"
     },
     {
       "id": "macce-anesthesiology-2026",
@@ -1082,7 +1097,7 @@
         }
       ],
       "owner_author_index": 0,
-      "venue": "ANESTHESIOLOGY 2026, San Diego, CA",
+      "venue": "ANESTHESIOLOGY 2026",
       "date": "2026-10-17",
       "links": [
         {
@@ -1094,7 +1109,68 @@
       "sources": [
         "https://www.abstractsonline.com/pp8/#!/21448/presentation/6830"
       ],
-      "subtype": "ePoster A1290"
+      "subtype": "ePoster",
+      "abstract_number": "A1290",
+      "location": "San Diego, CA"
+    },
+    {
+      "id": "vascular-readability-evs-2025",
+      "kind": "presentation",
+      "status": "presented",
+      "subtype": "Poster",
+      "title": "Large language models improve readability of patient education materials on vascular conditions",
+      "authors": [
+        {
+          "display": "Xu MC",
+          "bibtex": "Xu, M. C."
+        },
+        {
+          "display": "Habash N",
+          "bibtex": "Habash, N."
+        },
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Salvatore D",
+          "bibtex": "Salvatore, D."
+        },
+        {
+          "display": "DiMuzio P",
+          "bibtex": "DiMuzio, P."
+        },
+        {
+          "display": "Nooromid M",
+          "bibtex": "Nooromid, M."
+        },
+        {
+          "display": "Abai B",
+          "bibtex": "Abai, B."
+        }
+      ],
+      "owner_author_index": 2,
+      "venue": "Eastern Vascular Society 39th Annual Meeting",
+      "date": "2025-09-04",
+      "end_date": "2025-09-07",
+      "location": "Nashville, TN",
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.jvsvi.2025.100318"
+        },
+        {
+          "label": "Meeting archive",
+          "url": "https://evs2025.ipostersessions.com/Default.aspx?s=evs_2025_gallery"
+        }
+      ],
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S2949912725001357",
+        "https://events.easternvascular.org/summary-copy/"
+      ],
+      "related_ids": [
+        "vascular-readability-2026"
+      ]
     },
     {
       "id": "segmentation-medrxiv-2025",

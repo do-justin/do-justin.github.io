@@ -1,6 +1,6 @@
 # Justin Do - research website
 
-A compact academic site using al-folio v1.2, with About, Research, Publications,
+A compact academic site using al-folio v1.2, with About, Publications, Research,
 and the owner's current CV PDF. Public citation data are reviewed snapshots;
 the build does not contact bibliographic services or read private career files.
 
@@ -59,10 +59,16 @@ and [architecture](docs/architecture.md) for source and privacy boundaries.
 
 ## Verification and publication
 
-The check workflow validates, tests, builds offline, audits output and requires
-unchanged tracked inputs. Deployment is a separate manual workflow restricted
-to the intended user-site repository and default branch. Initial public push,
-repository changes, and deployment require the owner's explicit approval.
+CircleCI runs `.github/workflows/check.yml` through its GitHub Actions workflow
+support. Each push validates content, runs tests, builds offline, audits output,
+and requires unchanged tracked inputs. CI needs no publication API credentials
+or private career files. See [maintenance](docs/maintenance.md#continuous-integration)
+for manual runs and branch selection.
+
+Deployment is a separate manual GitHub Pages workflow restricted to the intended
+user-site repository and default branch. CircleCI runs checks only; verify that
+GitHub Actions can start before attempting the deploy workflow. Initial public
+push, repository changes, and deployment require the owner's explicit approval.
 
 No blog, news feed, teaching directory, people directory, analytics, or automatic
 publication acceptance is enabled. See [third-party notices](THIRD_PARTY.md).

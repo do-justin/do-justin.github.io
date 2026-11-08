@@ -107,13 +107,39 @@ main page on port 8081 and inspect the `qa-a11y-result` JSON element. This leave
 the production `_site` artifact unchanged. Automated results supplement manual
 keyboard, visual, and content review.
 
+## Continuous integration
+
+CircleCI's `build-and-test` pipeline uses the existing
+`.github/workflows/check.yml`; there is no separate CircleCI build script.
+The enabled GitHub App trigger runs on all pushes. A manual run must use the
+same branch for **Config Source** and **Checkout Source** so the workflow and
+tested code come from the same revision. During development, use the PR branch;
+after merging, use `main`. Update any saved branch selection at that point.
+
+In a successful run, confirm the dependency build, content validation, CV check,
+unit tests, offline Jekyll build, output audit, and unchanged-input check actually
+executed. CircleCI's GitHub Actions compatibility is in preview; inspect step
+logs after workflow changes rather than relying only on the status badge.
+The GitHub PR check is named `ci/circleci: check`.
+
+CI does not need a CircleCI personal token. Optional local API access for
+inspecting or rerunning jobs belongs in a user credential store outside this
+checkout, never in source files, workflow variables, or build artifacts.
+
 ## Release and rollback
 
 The configured URL is the intended deployment target, not a claim of a live site.
-After explicit first-release approval, prepare the user-site remote, review the
-complete source/history and artifact, enable GitHub Pages with Actions, and run
-the manual deploy workflow on approved default-branch content. The private
-development repository cannot pass that workflow's repository guard.
+Before release, confirm the PR's current commit passes CircleCI, review the
+complete source/history and artifact, and inspect all three pages and the CV.
+CircleCI checks do not test the GitHub Pages deployment. The publishing account
+must be able to start GitHub Actions jobs before using the manual deploy workflow;
+an account-level Actions restriction must be resolved first.
+
+After explicit first-release approval, prepare the user-site remote, enable
+GitHub Pages with Actions, and run the manual deploy workflow on approved `main`
+content. The private development repository cannot pass that workflow's
+repository guard. Verify public HTTPS, canonical URLs, sitemap, 404 behavior,
+and the hosted pages after deployment. Those checks cannot be completed locally.
 
 For rollback, revert to the last approved content commit and rerun the same
 checks and manual deployment. Do not add another deployment mechanism or a

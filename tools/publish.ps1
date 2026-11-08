@@ -24,6 +24,7 @@ try {
     New-Item -ItemType File -Path (Join-Path $stage '.nojekyll') | Out-Null
 
     Invoke-Git -C $stage init --initial-branch=gh-pages | Out-Null
+    Invoke-Git -C $stage config core.autocrlf false
     $existing = Invoke-Git ls-remote --heads $publicRemote refs/heads/gh-pages
     if ($existing) {
         Invoke-Git -C $stage fetch --depth 1 $publicRemote gh-pages

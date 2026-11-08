@@ -1,0 +1,21 @@
+name: Check public website
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Install locked build dependencies
+        run: docker compose build
+      - name: Validate, test, build, and audit with network disabled
+        run: docker compose run --rm site
+      - name: Require unchanged tracked inputs
+        run: git diff --exit-code

@@ -1,0 +1,8 @@
+{% include metadata.liquid %}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>:root { --max-content-width: {{ site.max_width | default: '1000px' }}; }</style>
+<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url | bust_file_cache }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+<link rel="icon" href="{{ '/assets/img/icon.svg' | relative_url | bust_file_cache }}">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">

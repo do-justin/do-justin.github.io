@@ -1,0 +1,101 @@
+title: Justin Do
+first_name: Justin
+last_name: Do
+description: Research on perioperative risk prediction, physiologic waveforms, and multimodal medical AI by Justin Do, a medical student at Thomas Jefferson University.
+url: https://do-justin.github.io
+baseurl: ""
+lang: en
+timezone: America/Los_Angeles
+theme: al_folio_core
+plugins:
+  - al_folio_core
+  - jekyll-scholar
+  - jekyll-sitemap
+  - jekyll-socials
+  - al_folio_upgrade
+markdown: kramdown
+highlighter: rouge
+include: [_pages]
+exclude:
+  - .build
+  - .bundle
+  - .venv
+  - vendor
+  - node_modules
+  - content
+  - schemas
+  - tools
+  - tests
+  - docs
+  - output
+  - README.md
+  - AGENTS.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - compose.yml
+  - requirements.txt
+  - package.json
+  - package-lock.json
+  - bin
+  - .al-folio-overrides.yml
+  - .dockerignore
+  - THIRD_PARTY.md
+sass:
+  sourcemap: never
+max_width: 1000px
+navbar_fixed: true
+footer_fixed: false
+footer_text: >-
+  Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+icon: icon.svg
+public_cv: true
+back_to_top: false
+search_enabled: false
+serve_og_meta: true
+serve_schema_org: false
+scholar:
+  source: ./_bibliography
+  bibliography: papers.bib
+  bibliography_template: bib
+  style: american-medical-association
+  locale: en
+  sort_by: none
+  group_by: none
+  last_name: [Do]
+  first_name: [Justin, J.]
+  replace_strings: true
+max_author_limit:
+enable_darkmode: false
+enable_publication_thumbnails: false
+enable_google_verification: false
+enable_bing_verification: false
+enable_google_analytics: false
+enable_google_tag_manager: false
+enable_search: false
+enable_math: false
+enable_masonry: false
+enable_tooltips: false
+enable_medium_zoom: false
+enable_progressbar: false
+enable_video_embedding: false
+enable_navbar_social: false
+enable_footer_social: false
+enable_cookie_consent: false
+enable_newsletter: false
+external_sources: []
+al_folio:
+  api_version: 1
+  style_engine: tailwind
+  tailwind:
+    version: 4.1.18
+    preflight: false
+    css_entry: assets/tailwind/app.css
+  distill:
+    engine: distillpub-template
+    source: al-org-dev/distill-template#al-folio
+    allow_remote_loader: false
+  compat:
+    bootstrap:
+      enabled: false

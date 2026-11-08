@@ -1,0 +1,10 @@
+services:
+  site:
+    image: justin-research-site:local
+    build: .
+    working_dir: /srv/jekyll
+    network_mode: none
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      JEKYLL_ENV: production

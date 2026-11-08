@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="post academic-home">
+  <header class="academic-identity">
+    <img class="portrait" src="{{ '/assets/img/justin-do.jpg' | relative_url }}" width="160" height="160" alt="Justin Do">
+    <div class="identity-text">
+      <h1>{{ site.data.publications.identity.name | escape }}</h1>
+      <p class="identity-affiliation">Sidney Kimmel Medical College<br>Thomas Jefferson University</p>
+      {% include profile-links.liquid %}
+    </div>
+  </header>
+  <article class="home-content" aria-label="Biography and selected publications">
+    {{ content }}
+  </article>
+  <aside class="academic-credentials" aria-label="Education and selected honors">
+    <section aria-labelledby="education"><h2 id="education">Education</h2>
+      {% for item in site.data.publications.education %}<div class="credential"><h3>{{ item.title | escape }}</h3><p>{{ item.organization | escape }}</p><p class="credential-date">{{ item.dates | escape }}</p></div>{% endfor %}
+    </section>
+    <section aria-labelledby="honors"><h2 id="honors">Selected honors</h2>
+      <ul class="honors-list">{% for item in site.data.publications.honors %}<li><span class="credential-date">{{ item.dates | escape }}</span> {{ item.title | escape }}{% if item.organization != '' %}<span class="honor-organization">{{ item.organization | escape }}</span>{% endif %}</li>{% endfor %}</ul>
+    </section>
+  </aside>
+</div>

@@ -128,19 +128,31 @@ checkout, never in source files, workflow variables, or build artifacts.
 
 ## Release and rollback
 
-The configured URL is the intended deployment target, not a claim of a live site.
 Before release, confirm the PR's current commit passes CircleCI, review the
 complete source/history and artifact, and inspect all three pages and the CV.
-CircleCI checks do not test the GitHub Pages deployment. The publishing account
-must be able to start GitHub Actions jobs before using the manual deploy workflow;
-an account-level Actions restriction must be resolved first.
+Merge reviewed source into `main` and synchronize that branch to the separate
+public repository `do-justin/do-justin.github.io`. Keep private staging and API
+credentials outside both repositories. From a clean checkout of the approved
+source commit, run:
 
-After explicit first-release approval, prepare the user-site remote, enable
-GitHub Pages with Actions, and run the manual deploy workflow on approved `main`
-content. The private development repository cannot pass that workflow's
-repository guard. Verify public HTTPS, canonical URLs, sitemap, 404 behavior,
-and the hosted pages after deployment. Those checks cannot be completed locally.
+```powershell
+.\tools\publish.ps1
+.\tools\publish.ps1 -Publish
+```
 
-For rollback, revert to the last approved content commit and rerun the same
-checks and manual deployment. Do not add another deployment mechanism or a
-competing gh-pages branch workflow. Scheduled checks remain off until requested.
+The first command prepares a release without uploading it. Both commands rerun
+the offline build, CV check, tests and artifact audit. The publish command pushes
+only the audited static output plus `.nojekyll` to the public repository's
+`gh-pages` branch, using a normal fast-forward push. It then selects that branch
+as the Pages source. Source files and build credentials are not copied into the
+served artifact. Git and GitHub CLI must already be authenticated.
+
+This replaces the custom deployment workflow, whose jobs could not start under
+the account's Actions restriction. GitHub's managed Pages workflow can serve
+prebuilt files; it still needs to complete before publication is successful.
+CircleCI checks alone do not verify hosting. After deployment, verify public
+HTTPS, canonical URLs, sitemap, 404 behavior, and the hosted pages.
+
+For rollback, revert the source to the last approved content and rerun the same
+checks and publish command. Do not add a competing deployment workflow.
+Scheduled checks remain off until requested.

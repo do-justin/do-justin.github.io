@@ -85,8 +85,9 @@ To update the CV, replace `assets/pdf/Justin_Do_CV.pdf` with the owner's chosen
 PDF and update `content/cv.json` with its version, page count and SHA-256 after
 review. Use `Get-FileHash -Algorithm SHA256 assets/pdf/Justin_Do_CV.pdf` to obtain
 the hash. `python tools/site.py cv` checks the manifest and PDF without changing
-either file. The current file is the November 7, 2026 residency CV, used unchanged
-at the owner's request. Review its contact/application details before release.
+either file. The current file is the November 8, 2026 residency CV, with the owner-approved
+MACCE ePoster status corrected to presented. Review its contact/application details
+before release.
 
 Capture About, Research and Publications at desktop and 320 px widths. Check
 navigation, keyboard focus, Summary/Related outputs disclosure, portrait sizing,

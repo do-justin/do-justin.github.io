@@ -94,13 +94,13 @@
       "doi": "10.1093/jamiaopen/ooag092",
       "doi_scope": "work",
       "subtype": "Research article",
-      "online_date": "2026-06-20",
       "summary": {
         "kind": "Summary",
         "text": "This retrospective INSPIRE study compared preoperative models with models incorporating low-frequency intraoperative data for stage 2 or 3 postoperative acute kidney injury. Intraoperative summaries added limited discrimination, and a temporal deep-learning model did not outperform simpler tabular methods. The findings motivate testing whether higher-resolution physiologic signals add information beyond the preoperative record.",
         "source": "https://doi.org/10.1093/jamiaopen/ooag092",
         "reuse_basis": "Original summary written for this website from the cited public research record."
       },
+      "online_date": "2026-06-20",
       "citations": {
         "source": "Crossref",
         "count": 0,
@@ -161,13 +161,13 @@
       "doi": "10.2196/77591",
       "doi_scope": "work",
       "subtype": "Research letter",
-      "online_date": "2026-05-13",
       "summary": {
         "kind": "Summary",
         "text": "This research letter develops and evaluates a multimodal workflow for identifying home fall hazards and visualizing suggested modifications. A formative rating study compared baseline outputs with an enhanced, evidence-grounded pipeline. The findings support further design evaluation while preserving concerns about implausible or hazardous edits; clinical implementation and effects on falls remain untested.",
         "source": "https://doi.org/10.2196/77591",
         "reuse_basis": "Original summary written for this website from the cited public research record."
       },
+      "online_date": "2026-05-13",
       "citations": {
         "source": "Crossref",
         "count": 1,
@@ -1049,6 +1049,52 @@
         "https://www.abstractsonline.com/pp8/#!/20301/presentation/32945"
       ],
       "subtype": "Oral and ePoster"
+    },
+    {
+      "id": "macce-anesthesiology-2026",
+      "kind": "presentation",
+      "status": "presented",
+      "title": "Integration of intraoperative data for the prediction of MACCE using deep learning",
+      "authors": [
+        {
+          "display": "Do J",
+          "bibtex": "Do, J."
+        },
+        {
+          "display": "Guggilla N",
+          "bibtex": "Guggilla, N."
+        },
+        {
+          "display": "Kim AH",
+          "bibtex": "Kim, A. H."
+        },
+        {
+          "display": "Suresh V",
+          "bibtex": "Suresh, V."
+        },
+        {
+          "display": "Li M",
+          "bibtex": "Li, M."
+        },
+        {
+          "display": "Kothari R",
+          "bibtex": "Kothari, R."
+        }
+      ],
+      "owner_author_index": 0,
+      "venue": "ANESTHESIOLOGY 2026, San Diego, CA",
+      "date": "2026-10-17",
+      "links": [
+        {
+          "label": "Conference record",
+          "url": "https://www.abstractsonline.com/pp8/#!/21448/presentation/6830"
+        }
+      ],
+      "related_ids": [],
+      "sources": [
+        "https://www.abstractsonline.com/pp8/#!/21448/presentation/6830"
+      ],
+      "subtype": "ePoster A1290"
     },
     {
       "id": "segmentation-medrxiv-2025",

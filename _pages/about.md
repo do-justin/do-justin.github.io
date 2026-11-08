@@ -11,9 +11,9 @@ latest_posts:
 ---
 I am a fourth-year medical student at Thomas Jefferson University, currently applying into anesthesiology.
 
-I’m interested in how machine learning can use different kinds of clinical data. My current work asks whether intraoperative time series and physiologic waveforms add useful information beyond tabular clinical variables. I want to understand when text, images, audio, and physiologic signals improve clinical prediction, which models can use them, and how to interpret what those models learn.
+My research focuses on the value of multimodal data for clinical prediction. I study whether intraoperative time series and physiologic waveforms add information beyond tabular clinical variables, and how we can interpret the models that use them. I hope to combine these signals with text, images, and audio.
 
-I also study the emerging multimodal capabilities of large language models in medicine. My work includes benchmarking conversational image segmentation and evaluating home fall-risk assessment: where these models are useful, where they fail, and what needs to improve.
+I also study the emerging multimodal capabilities of large language models in medicine, with projects evaluating conversational image segmentation and home fall-risk assessment.
 
 {% include scholar-metrics.liquid %}
 

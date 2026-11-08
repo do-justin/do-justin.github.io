@@ -18,9 +18,9 @@ Adding low-frequency intraoperative data improved gradient-boosted-tree AUROC fr
 
 ### High-frequency waveform analysis
 
-That result led to a follow-on question: could measurements recorded every five minutes miss useful physiology between observations? I am studying ECG, plethysmography, capnography, and airway-pressure waveforms from VitalDB, comparing engineered time-series features with interpretable tabular models for postoperative AKI and ICU-risk discrimination.
+Building on our JAMIA Open study, we are investigating whether high-frequency intraoperative waveforms improve postoperative risk prediction. We extract time-series features from ECG, plethysmography, capnography, and airway-pressure waveforms in VitalDB and test their added value in interpretable tabular models.
 
-I led waveform processing, feature construction, modeling, and analysis. The work was presented as an ePoster at ANESTHESIOLOGY 2026; the manuscript remains in development.
+I developed the waveform-processing and feature-extraction pipeline and led the modeling and analysis. We presented the work as an ePoster at ANESTHESIOLOGY 2026, with the manuscript currently being drafted.
 
 [Conference record](https://www.abstractsonline.com/pp8/#!/21448/presentation/6835)
 </div>
@@ -28,11 +28,9 @@ I led waveform processing, feature construction, modeling, and analysis. The wor
 ## Evaluation of multimodal medical AI
 
 <div class="research-project" markdown="1">
-I led a zero-shot conversational segmentation benchmark of 13,086 image-mask pairs across seven medical-imaging modalities. We evaluated Gemini 2.5 Flash and Flash-Lite against expert masks and audited dermoscopy performance across skin-tone groups.
+I’m interested in the emerging capabilities of large language models. When [Gemini 2.5](https://developers.googleblog.com/en/conversational-image-segmentation-gemini-2-5/) introduced image segmentation through text prompts, I wanted to see how well it worked on medical images. We evaluated Gemini 2.5 Flash and Flash-Lite on 13,086 image-mask pairs across seven imaging modalities, comparing their outputs with expert masks.
 
-Performance was strong on several photographic targets and weak on some radiologic structures. The dermoscopy audit found lower mask-generation success and overlap in darker-tone images. I led dataset curation, benchmark design, prompt implementation, fairness analysis, statistics, figures, and writing, with collaborators reviewing the technical methods.
-
-The manuscript is a **preprint, not peer reviewed**. Its separate IARS/SOCCA conference abstract was published in the 2026 Anesthesia & Analgesia supplement.
+Performance was strong on several photographic targets and weak on some radiologic structures. In our dermoscopy audit, masks were generated less often and had lower overlap with expert masks for darker-tone images. I designed and implemented the benchmark, including the skin-tone audit, and led the analysis and writing.
 
 [Preprint](https://doi.org/10.1101/2025.11.21.25340008) · [Related outputs]({{ '/publications/#segmentation-medrxiv-2025' | relative_url }})
 </div>
@@ -49,6 +47,4 @@ Reviewers preferred the enhanced, CDC-grounded recommendations over baseline pro
 
 ## Future directions
 
-I want to compare models trained directly on waveform sequences, including pretrained foundation models, with engineered features, and test whether those representations add information beyond clinical data. External validation should examine how performance and calibration vary across hospitals and patient populations.
-
-I also want to study how clinicians interpret explanations and uncertainty, whether predictions change decisions such as postoperative monitoring, and whether those changes benefit patients.
+I hope to externally validate these models using multi-center data. I also plan to compare models trained directly on waveform sequences, including pretrained foundation models, with engineered features.

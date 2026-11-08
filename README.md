@@ -65,10 +65,11 @@ and requires unchanged tracked inputs. CI needs no publication API credentials
 or private career files. See [maintenance](docs/maintenance.md#continuous-integration)
 for manual runs and branch selection.
 
-Deployment is a separate manual GitHub Pages workflow restricted to the intended
-user-site repository and default branch. CircleCI runs checks only; verify that
-GitHub Actions can start before attempting the deploy workflow. Initial public
-push, repository changes, and deployment require the owner's explicit approval.
+Publication is manual. `tools/publish.ps1` reruns the build and audit, then
+prepares the static files for the separate public user-site repository. Add
+`-Publish` to upload them to its `gh-pages` branch. GitHub's managed Pages workflow
+serves that branch without rebuilding Jekyll; CircleCI runs checks only.
+Publication requires the owner's approval. See the maintenance release steps.
 
 No blog, news feed, teaching directory, people directory, analytics, or automatic
 publication acceptance is enabled. See [third-party notices](THIRD_PARTY.md).

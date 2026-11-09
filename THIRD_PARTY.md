@@ -11,3 +11,6 @@ This site uses the al-folio v1.2 starter and al_folio_core 1.0.15.
 - A local asset-cache filter resolves the v1 theme-gem assets as well as site-owned assets.
 
 The portrait is user-supplied. Only an optimized, metadata-free copy is included.
+
+- The unmodified ORCID iD icon comes from [ORCID's source repository](https://github.com/ORCID/ORCID-Source/blob/main/orcid-web/src/main/webapp/static/img/id-icon.svg). The compact identifier link follows the [iD display guidance](https://info.orcid.org/documentation/integration-guide/orcid-id-display-guidelines/). ORCID, the ORCID logo and the iD logo are trademarks of ORCID, Inc.
+- The unmodified Google Scholar icon comes from [Google's Brand Resource Center](https://about.google/brand-resource-center/products-and-services/), which permits linking it to a Scholar profile. Google Scholar and its icon are trademarks of Google LLC.

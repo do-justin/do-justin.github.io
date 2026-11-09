@@ -1,5 +1,7 @@
 <div class="profile-links">
   <a href="mailto:{{ site.data.publications.identity.email | escape }}">Email</a>
-  {% for link in site.data.publications.identity.links %}{% unless link.label == 'Google Scholar' %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% endunless %}{% endfor %}
+  {% for link in site.data.publications.identity.links %}{% unless link.label == 'Google Scholar' or link.label == 'ORCID' %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% endunless %}{% endfor %}
   {% if site.public_cv %}<a href="{{ '/assets/pdf/Justin_Do_CV.pdf' | relative_url }}">CV (PDF)</a>{% endif %}
+  {% assign orcid = site.data.publications.identity.links | where: 'label', 'ORCID' | first %}
+  {% if orcid %}<a class="orcid-link" href="{{ orcid.url | escape }}" aria-label="ORCID iD: {{ orcid.url | remove: 'https://orcid.org/' | escape }}"><img class="brand-icon" src="{{ '/assets/img/orcid-id.svg' | relative_url }}" width="24" height="24" alt="">{{ orcid.url | remove: 'https://orcid.org/' | escape }}</a>{% endif %}
 </div>

@@ -384,7 +384,7 @@ def audit_artifact(directory):
     allowed = {"index.html", "404.html", "research/index.html", "publications/index.html",
                "robots.txt", "sitemap.xml", "assets/css/main.css", "assets/css/tailwind.css",
                "assets/js/nav-toggle.js", "assets/img/icon.svg", "assets/img/justin-do.jpg",
-               "assets/pdf/Justin_Do_CV.pdf"}
+               "assets/pdf/Justin_Do_CV.pdf", "assets/img/orcid-id.svg", "assets/img/google-scholar.webp"}
     allowed.update('assets/bib/' + w['id'] + '.bib' for w in read_json(PROFILE)['works'] if w['kind'] != 'presentation')
     for p in directory.rglob("*"):
         if not p.is_file():

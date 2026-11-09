@@ -1688,6 +1688,10 @@ a {
   text-decoration: underline;
 }
 
+footer a {
+  white-space: nowrap;
+}
+
 a:focus-visible, summary:focus-visible, button:focus-visible {
   outline: 3px solid #176b68;
   outline-offset: 4px;
@@ -1733,6 +1737,20 @@ a:focus-visible, summary:focus-visible, button:focus-visible {
   padding-block: 0.15rem;
 }
 
+.profile-links .orcid-link {
+  display: inline-flex;
+  flex-basis: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
 .scholar-metrics {
   display: flex;
   flex-wrap: wrap;
@@ -1748,7 +1766,9 @@ a:focus-visible, summary:focus-visible, button:focus-visible {
 }
 
 .scholar-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   border: 1px solid #b8cfcd;
   border-radius: 4px;
   padding: 0.25rem 0.55rem;
